@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit{
   onSubmit() {
     console.log(this.form);
     
-    this.httpClient.post('http://localhost:8080/api/account', this.form).subscribe(
+    this.httpClient.post('http://localhost:8080/api/account/login', this.form).subscribe(
       data => console.log(data), 
       err  => console.log(err)
     )

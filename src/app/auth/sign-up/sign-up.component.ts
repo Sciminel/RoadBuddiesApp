@@ -16,21 +16,25 @@ export class SignUpComponent implements OnInit{
     email: null,
     birthday: null,
     phoneNumber: null,
-    pwdConfirm: null
   }
 
-  // `firstname`, `lastname`, `username`, `password`, `email`, `birthday`, `phone_number`
+  pwdConfirm!: string;
+
+
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-      
   }
 
   verifPassword(): Boolean {
-    return this.form.pwdConfirm === this.form.password;
+    return this.pwdConfirm === this.form.password;
   }
 
   onSubmit() {
-    console.log(this.form)
+    console.log(this.form);
+    this.httpClient.post("http://localhost:8080/api/account/signup", this.form).subscribe(
+      data => console.log(data),
+      err => console.log(err)
+    )
   }
 }

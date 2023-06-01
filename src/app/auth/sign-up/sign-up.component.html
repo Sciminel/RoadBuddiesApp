@@ -101,20 +101,20 @@
           Un mot de passe est requis !
         </p>
       </div>
-      <div class="group">
+<!--       <div class="group">
         <label for="pwdConfirm">Mot de passe confirmation : </label>
         <input
           type="text"
           name="pwdConfirm"
           id="pwdConfirm"
-          [(ngModel)]="form.pwdConfirm"
+          [(ngModel)]="pwdConfirm"
           #pwdConfirm="ngModel"
           required
         />
         <p class="form-error" *ngIf="!verifPassword() && f.submitted">
           Un mot de passe de confirmation est different !
         </p>
-      </div>
+      </div> -->
       <div class="group">
           <button type="submit">Validez</button>
             <a routerLink="/auth/signIn">Connectez-vous</a>
