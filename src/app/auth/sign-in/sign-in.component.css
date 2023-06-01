@@ -1,0 +1,56 @@
+.form-container {
+    width: 320px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container form {
+    padding: 0 50px 50px;
+    height: 400px;
+    box-shadow: 1px 1px 10px #999;
+}
+
+
+.form-container form h2{
+    padding: 20px 0;
+    font-size: 30px;
+
+}
+
+.form-container form .group {
+    padding: 5px 0;
+}
+
+.form-container form .group input{
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.form-container form .group a{
+    padding-right: 34px;
+}
+
+.form-container form .group button{
+    margin-top: 15px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(104, 104, 255);
+    color: white;
+    box-shadow: 2px 2px 2px #333;
+}
+
+.form-container form .group button:hover{
+
+    box-shadow: 1px 1px 1px #333;
+}
+
+.form-container form .group .form-error {
+    color: red;
+    font-size: 12px;
+}

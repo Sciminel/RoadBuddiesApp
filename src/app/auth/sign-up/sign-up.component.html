@@ -1,0 +1,125 @@
+<div class="form-container">
+  <form name="formSignUp" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+    <h2>Inscription</h2>
+    <div class="group-container">
+      <div class="group">
+        <label for="lastname">Nom : </label>
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          [(ngModel)]="form.lastname"
+          #lastname="ngModel"
+          required
+        />
+        <p class="form-error" *ngIf="lastname.errors && f.submitted">
+          Un nom est requis !
+        </p>
+      </div>
+      <div class="group">
+        <label for="firstname">Prénom : </label>
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          [(ngModel)]="form.firstname"
+          #firstname="ngModel"
+          required
+        />
+        <p class="form-error" *ngIf="firstname.errors && f.submitted">
+          Un prénom est requis !
+        </p>
+      </div>
+      <div class="group">
+        <label for="birthday">Date d'anniversaire : </label>
+        <input
+          type="date"
+          name="birthday"
+          id="birthday"
+          [(ngModel)]="form.birthday"
+          #birthday="ngModel"
+          required
+        />
+        <p class="form-error" *ngIf="birthday.errors && f.submitted">
+          Une date d'anniversaire est requis !
+        </p>
+      </div>
+      <div class="group">
+        <label for="phoneNumber">Numero de telephone : </label>
+        <input
+          type="text"
+          name="phoneNumber"
+          id="phoneNumber"
+          [(ngModel)]="form.phoneNumber"
+          #phoneNumber="ngModel"
+          required
+        />
+        <p class="form-error" *ngIf="phoneNumber.errors && f.submitted">
+          Un numéro de téléphone est requis !
+        </p>
+      </div>
+
+      <div class="group">
+        <label for="email">Email : </label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          [(ngModel)]="form.email"
+          #email="ngModel"
+          required
+        />
+        <p class="form-error" *ngIf="email.errors && f.submitted">
+          Un email est requis !
+        </p>
+      </div>
+      <div class="group">
+        <label for="username">Pseudo : </label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          [(ngModel)]="form.username"
+          #username="ngModel"
+          required
+        />
+        <p class="form-error" *ngIf="username.errors && f.submitted">
+          Un pseudo est requis !
+        </p>
+      </div>
+      <div class="group">
+        <label for="password">Mot de passe : </label>
+        <input
+          type="text"
+          name="password"
+          id="password"
+          [(ngModel)]="form.password"
+          #password="ngModel"
+          required
+        />
+        <p class="form-error" *ngIf="password.errors && f.submitted">
+          Un mot de passe est requis !
+        </p>
+      </div>
+      <div class="group">
+        <label for="pwdConfirm">Mot de passe confirmation : </label>
+        <input
+          type="text"
+          name="pwdConfirm"
+          id="pwdConfirm"
+          [(ngModel)]="form.pwdConfirm"
+          #pwdConfirm="ngModel"
+          required
+        />
+        <p class="form-error" *ngIf="!verifPassword() && f.submitted">
+          Un mot de passe de confirmation est different !
+        </p>
+      </div>
+      <div class="group">
+          <button type="submit">Validez</button>
+            <a routerLink="/auth/signIn">Connectez-vous</a>
+
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,35 @@
+<div>
+
+    <div>Username : {{ form.username }}</div>
+    <div>Password : {{ form.password }}</div>
+
+</div>
+
+<div class="form-container">
+    <form 
+    name="formSignIn"
+    #f="ngForm"
+    (ngSubmit)="f.form.valid && onSubmit()" 
+     >
+        <h2>Connexion</h2>
+        <div class="group">
+            <label for="username">Pseudo : </label>
+            <input type="text" name="username" id="username" [(ngModel)]="form.username" #username="ngModel" required>
+            <p class="form-error" *ngIf="username.errors && f.submitted">
+                Un pseudo est requis ! 
+            </p>
+        </div>
+        <div class="group">
+            <label for="password">Mot de passe : </label>
+            <input type="text" name="password" id="password" [(ngModel)]="form.password" #password="ngModel" required>
+            <p class="form-error" *ngIf="password.errors && f.submitted">
+                Un mot de passe est requis ! 
+            </p>
+        </div>
+        <div class="group">
+            <a routerLink="/auth/signUp">Inscrivez-vous</a>
+            <button type="submit">Connexion</button>
+        </div>
+    </form>
+
+</div>
